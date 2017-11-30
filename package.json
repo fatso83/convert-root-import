@@ -1,0 +1,11 @@
+{
+  "name": "convert-root-import",
+  "version": "1.0.0",
+  "description": "Convert paths used in babel-plugin-root-import to relative ones",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC"
+}
