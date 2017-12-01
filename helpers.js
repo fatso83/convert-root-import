@@ -1,9 +1,9 @@
-import slash from 'slash';
-import path from 'path';
+const slash  = require('slash');
+const path = require('path');
 
 const root = slash(global.rootPath || process.cwd());
 
-export const hasRootPathPrefixInString = (importPath, rootPathPrefix = '~') => {
+const hasRootPathPrefixInString = (importPath, rootPathPrefix = '~') => {
   let containsRootPathPrefix = false;
 
   if (typeof importPath === 'string') {
@@ -20,7 +20,7 @@ export const hasRootPathPrefixInString = (importPath, rootPathPrefix = '~') => {
   return containsRootPathPrefix;
 };
 
-export const transformRelativeToRootPath = (importPath, rootPathSuffix, rootPathPrefix, sourceFile = '') => {
+const transformRelativeToRootPath = (importPath, rootPathSuffix, rootPathPrefix, sourceFile = '') => {
   let withoutRootPathPrefix = '';
   if (hasRootPathPrefixInString(importPath, rootPathPrefix)) {
     if (importPath.substring(0, 1) === '/') {
@@ -60,3 +60,5 @@ export const transformRelativeToRootPath = (importPath, rootPathSuffix, rootPath
 
   throw new Error('ERROR: No path passed');
 };
+
+module.exports = {hasRootPathPrefixInString, transformRelativeToRootPath};
