@@ -7,16 +7,20 @@ The root will be set to the current directory the command is executed from, mean
 
 ## Usage
 ```
-convert-root-import -o some-file.js`
+convert-root-import -o some-file.js
 ```
+
 See `convert-root-import --help` for more information.
 
 As this tool currently works on single files at a time, you would drive it using `find` or similar if you want to change hundreds of files:
 
 ```
 # change JSX files
-find src/client -name '*.jsx' -exec convert-root-import -o {} \;`
+find src/client -name '*.jsx' -exec convert-root-import -o {} \;
 ```
+
+## Installation
+`npm install -g convert-root-import`
 
 ## Caveats
 This is a simple tool that doesn't build an AST, and only works line-wise. As such, it does not handle multi-line
