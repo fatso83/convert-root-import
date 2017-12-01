@@ -38,4 +38,8 @@ describe('convert', function(){
         fixtureTest('dont-touch');
     });
 
+    it('should handle comments', function(){
+        fixtureTest('handle-comments');
+    });
+
 });

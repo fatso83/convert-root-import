@@ -7,7 +7,7 @@ const rootPathPrefix = '~';
 module.exports = function convert(sourceFile, rootPathSuffix){
     const content = read(sourceFile).toString();
     const lines = content.split('\n');
-    const re = /(( )?import .*(from )?['"])(.*)(['"].*)/
+    const re = /((.*)?import .*(from )?['"])(.*)(['"].*)/
     let transformed = '';
 
 
