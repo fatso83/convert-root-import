@@ -1,3 +1,5 @@
+'use strict';
+
 const read = require('fs').readFileSync;
 const helpers =  require('./helpers.js');
 
