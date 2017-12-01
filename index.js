@@ -7,17 +7,17 @@ const rootPathPrefix = '~';
 module.exports = function convert(sourceFile, rootPathSuffix){
     const content = read(sourceFile).toString();
     const lines = content.split('\n');
-    const re = /(import.*(from)? ['"])(.*)(['"].*)/
+    const re = /(( )?import .*(from )?['"])(.*)(['"].*)/
     let transformed = '';
 
 
     lines.forEach(l => {
         const match = l.match(re);
         if (match) {
-            const importPath = match[3];
+            const importPath = match[4];
             const newPath = helpers.transformRelativeToRootPath(importPath, rootPathSuffix, rootPathPrefix, sourceFile);
-            const fromIfDefined = match[2]? match[2]: '';
-            transformed += `${match[1]}${fromIfDefined}${newPath}${match[4]}\n`;
+            const fromIfDefined = match[3]? match[3]: '';
+            transformed += `${match[1]}${fromIfDefined}${newPath}${match[5]}\n`;
         } else {
             transformed += `${l}\n`;
         }

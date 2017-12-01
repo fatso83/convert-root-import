@@ -34,4 +34,8 @@ describe('convert', function(){
         fixtureTest('tilde-path');
     });
 
+    it('should not touch lines that only contain "import" as part of a work', function(){
+        fixtureTest('dont-touch');
+    });
+
 });
