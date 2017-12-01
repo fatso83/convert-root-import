@@ -1,6 +1,6 @@
 {
   "name": "convert-root-import",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert paths used in babel-plugin-root-import to relative ones",
   "main": "index.js",
   "bin": {
